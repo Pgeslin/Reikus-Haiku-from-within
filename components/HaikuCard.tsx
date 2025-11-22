@@ -41,7 +41,7 @@ const HaikuCard: React.FC<HaikuCardProps> = ({
       <div className="relative aspect-[3/4] w-full overflow-hidden bg-black">
         <img 
           src={displayUrl} 
-          alt="Haiku visualization" 
+          alt="Visualisation du Haïku" 
           className={`object-cover w-full h-full transition-all duration-1000 ${isLoadingImage ? 'opacity-30 scale-105' : 'opacity-90 group-hover:opacity-100 scale-100'}`}
         />
         
@@ -52,7 +52,7 @@ const HaikuCard: React.FC<HaikuCardProps> = ({
           <div className="absolute inset-0 flex items-center justify-center z-10">
             <div className="flex flex-col items-center">
               <div className="w-10 h-10 border-t-2 border-r-2 border-white rounded-full animate-spin mb-3"></div>
-              <p className="text-xs uppercase tracking-widest text-white/70 animate-pulse">Painting Haiku...</p>
+              <p className="text-xs uppercase tracking-widest text-white/70 animate-pulse">Création du Haïga...</p>
             </div>
           </div>
         )}
@@ -80,7 +80,7 @@ const HaikuCard: React.FC<HaikuCardProps> = ({
 
         {explanation && (
           <div className="mt-4 p-4 bg-white/5 rounded-lg border border-white/10 backdrop-blur-sm animate-fade-in-up">
-             <p className="text-xs text-yellow-100/80 font-light uppercase tracking-widest mb-1">Insight</p>
+             <p className="text-xs text-yellow-100/80 font-light uppercase tracking-widest mb-1">Éclairage</p>
              <p className="text-sm text-gray-300 italic">{explanation}</p>
           </div>
         )}

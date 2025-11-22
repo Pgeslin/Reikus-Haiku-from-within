@@ -64,7 +64,7 @@ const App: React.FC = () => {
     if (matches.length > 0) {
       const randomMatch = matches[Math.floor(Math.random() * matches.length)];
       setSelectedHaiku(randomMatch);
-      setExplanation(`Reflecting on the theme of "${tag}".`);
+      setExplanation(`Réflexion sur le thème : "${tag}".`);
       setView(AppState.RESULT);
     }
   };
@@ -85,7 +85,7 @@ const App: React.FC = () => {
           setExplanation(result.explanation);
           setView(AppState.RESULT);
         } else {
-          setError("The spirits are silent. Please try again.");
+          setError("Les esprits sont silencieux. Veuillez réessayer.");
         }
       } else {
          // Fallback to simple keyword search
@@ -97,18 +97,18 @@ const App: React.FC = () => {
          
          if (simpleMatch) {
             setSelectedHaiku(simpleMatch);
-            setExplanation("Selected based on matching keywords.");
+            setExplanation("Sélectionné sur la base de mots-clés.");
             setView(AppState.RESULT);
          } else {
              const random = HAIKU_DATA[Math.floor(Math.random() * HAIKU_DATA.length)];
              setSelectedHaiku(random);
-             setExplanation("The universe chose this for you.");
+             setExplanation("L'univers a choisi ceci pour vous.");
              setView(AppState.RESULT);
          }
       }
     } catch (err) {
       console.error(err);
-      setError("Connection to the muse failed.");
+      setError("La connexion avec la muse a échoué.");
     } finally {
       setIsProcessing(false);
     }
@@ -120,12 +120,12 @@ const App: React.FC = () => {
         Changer le Monde de l’Intérieur
       </h1>
       <p className="text-lg md:text-xl font-light text-gray-200 mb-12 tracking-wide max-w-2xl mx-auto drop-shadow-md">
-        Enter a sanctuary of words and images. Explore the illustrated Haikus of Pierre Geslin.
+        Entrez dans un sanctuaire de mots et d'images. Explorez les Haïkus illustrés de Pierre Geslin.
       </p>
 
       <div className="w-full max-w-lg bg-black/40 backdrop-blur-md p-8 rounded-xl border border-white/10 shadow-2xl">
         <label className="block text-sm font-medium text-gray-300 mb-4 uppercase tracking-widest">
-          How does your inner world feel today?
+          Comment ressentez-vous votre monde intérieur aujourd'hui ?
         </label>
         <div className="relative mb-6">
           <input
@@ -133,7 +133,7 @@ const App: React.FC = () => {
             value={userFeeling}
             onChange={(e) => setUserFeeling(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && handleAnalyzeFeeling()}
-            placeholder="e.g., peaceful, storms ahead, searching for light..."
+            placeholder="ex : paisible, tempête à venir, en quête de lumière..."
             className="w-full bg-transparent border-b border-gray-500 text-white placeholder-gray-500 py-3 px-2 focus:outline-none focus:border-white transition-colors text-lg text-center"
           />
           {isProcessing && (
@@ -152,13 +152,13 @@ const App: React.FC = () => {
             !userFeeling ? 'opacity-50 cursor-not-allowed text-gray-500' : 'hover:bg-white hover:text-black text-white'
           }`}
         >
-          Reflect
+          Explorer
         </button>
         {error && <p className="text-red-400 text-xs mt-3">{error}</p>}
       </div>
 
       <div className="mt-12">
-        <p className="text-xs uppercase tracking-widest text-gray-400 mb-4">Or choose a theme</p>
+        <p className="text-xs uppercase tracking-widest text-gray-400 mb-4">Ou choisissez un thème</p>
         <div className="flex flex-wrap justify-center gap-3">
           {THEMES.slice(0, 8).map(tag => (
             <button
@@ -173,7 +173,7 @@ const App: React.FC = () => {
              onClick={handleNavigateGallery}
              className="px-4 py-2 text-xs uppercase tracking-wider text-gray-400 hover:text-white transition-colors underline underline-offset-4 decoration-gray-600"
           >
-            View All
+            Voir tout
           </button>
         </div>
       </div>
@@ -182,8 +182,8 @@ const App: React.FC = () => {
 
   const renderGallery = () => (
     <div className="container mx-auto px-4 py-12 z-10 relative">
-      <h2 className="text-3xl font-light text-center mb-12 tracking-widest text-white haiku-font italic">Gallery</h2>
-      <p className="text-center text-gray-400 mb-12 max-w-xl mx-auto text-sm">Select a Haiku to generate its unique "Haiga" illustration.</p>
+      <h2 className="text-3xl font-light text-center mb-12 tracking-widest text-white haiku-font italic">Galerie</h2>
+      <p className="text-center text-gray-400 mb-12 max-w-xl mx-auto text-sm">Sélectionnez un Haïku pour générer son illustration "Haïga" unique.</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {HAIKU_DATA.map(haiku => (
           <div 
@@ -224,7 +224,7 @@ const App: React.FC = () => {
             onClick={() => setView(AppState.HOME)}
             className="text-sm text-gray-400 hover:text-white uppercase tracking-widest border-b border-transparent hover:border-white pb-1 transition-all"
           >
-            Return to Center
+            Retour au centre
           </button>
        </div>
     </div>
@@ -247,7 +247,7 @@ const App: React.FC = () => {
       </main>
       
       <footer className="fixed bottom-4 w-full text-center text-[10px] text-gray-600 uppercase tracking-widest z-50 pointer-events-none">
-        Based on "Changer le Monde de l’Intérieur" by Pierre Geslin
+        D'après "Changer le Monde de l’Intérieur" de Pierre Geslin
       </footer>
 
       <style>{`

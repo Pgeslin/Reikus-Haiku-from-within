@@ -15,8 +15,8 @@ const Header: React.FC<HeaderProps> = ({ onNavigateHome, onNavigateGallery }) =>
         L'INTÉRIEUR
       </div>
       <nav className="space-x-6 text-sm tracking-wide">
-        <button onClick={onNavigateHome} className="hover:text-gray-300 transition-colors">HOME</button>
-        <button onClick={onNavigateGallery} className="hover:text-gray-300 transition-colors">GALLERY</button>
+        <button onClick={onNavigateHome} className="hover:text-gray-300 transition-colors">ACCUEIL</button>
+        <button onClick={onNavigateGallery} className="hover:text-gray-300 transition-colors">GALERIE</button>
       </nav>
     </header>
   );

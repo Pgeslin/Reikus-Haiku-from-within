@@ -16,7 +16,7 @@ export const matchHaikuWithGemini = async (userFeeling: string): Promise<GeminiR
 
   const prompt = `
     You are a sensitive and poetic assistant. 
-    I have a collection of Haikus. 
+    I have a collection of Haikus in French. 
     User input: "${userFeeling}"
     
     Your task is to select the single best matching Haiku ID from the list below that resonates with the user's input feeling or thought.
@@ -27,7 +27,7 @@ export const matchHaikuWithGemini = async (userFeeling: string): Promise<GeminiR
     
     Return the result in JSON format with two fields:
     1. "haikuId" (number): The ID of the selected haiku.
-    2. "explanation" (string): A brief, poetic sentence explaining why this haiku fits the feeling (in English).
+    2. "explanation" (string): A brief, poetic sentence explaining why this haiku fits the feeling (in French).
   `;
 
   try {
